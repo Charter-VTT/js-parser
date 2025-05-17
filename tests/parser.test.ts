@@ -91,7 +91,7 @@ key: value
     });
   });
 
-  describe('TOML', () => {
+  describe('Ini', () => {
     test('parse', async () => {
       const result = await Parser.parse(
         'toml',
@@ -112,6 +112,24 @@ key = "value"
       expect(result).toBeString();
       expect(result).toContain('key =');
       expect(result).toContain('"value"\n');
+    });
+  });
+
+  describe('INI', () => {
+    test('parse', async () => {
+      const result = await Parser.parse('ini', 'key=value');
+
+      expect(result).toBeObject();
+      expect(result).toContainKey('key');
+      expect(result).toContainValue('value');
+    });
+
+    test('stringify', async () => {
+      const result = await Parser.stringify('ini', { key: 'value' });
+
+      expect(result).toBeString();
+      expect(result).toContain('key=');
+      expect(result).toContain('value');
     });
   });
 });
