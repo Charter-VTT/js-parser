@@ -4,8 +4,8 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/Charter-VTT/js-parser/blob/main/LICENSE">
-    <img src="https://img.shields.io/github/license/Charter-VTT/js-parser" alt="License">
+  <a href="https://github.com/Charter-VTT/parser/blob/main/LICENSE">
+    <img src="https://img.shields.io/github/license/Charter-VTT/parser" alt="License">
   </a>
   <img src="https://img.shields.io/badge/code%20style-biome-44cc11" alt="Code Style: Biome">
 </p>
@@ -27,8 +27,8 @@ A JavaScript/TypeScript library for parsing various configuration file formats s
 Clone the repository:
 
 ```bash
-git clone https://github.com/Charter-VTT/js-parser.git
-cd js-parser
+git clone https://github.com/Charter-VTT/parser.git
+cd parser
 ```
 
 Install dependencies:
