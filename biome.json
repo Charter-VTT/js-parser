@@ -1,0 +1,39 @@
+{
+  "$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
+  "vcs": {
+    "enabled": true,
+    "clientKind": "git",
+    "useIgnoreFile": true,
+    "defaultBranch": "main"
+  },
+  "files": {
+    "ignoreUnknown": true,
+    "ignore": [".vscode/*"]
+  },
+  "formatter": {
+    "enabled": true,
+    "useEditorconfig": true
+  },
+  "organizeImports": {
+    "enabled": true
+  },
+  "linter": {
+    "enabled": true,
+    "rules": {
+      "recommended": true,
+      "correctness": {
+        "useImportExtensions": "warn"
+      }
+    }
+  },
+  "javascript": {
+    "formatter": {
+      "quoteStyle": "single"
+    }
+  },
+  "json": {
+    "formatter": {
+      "trailingCommas": "none"
+    }
+  }
+}

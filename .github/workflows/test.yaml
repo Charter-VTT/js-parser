@@ -1,0 +1,25 @@
+# Bun CI workflow: runs tests using Bun on pushes and pull requests
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+name: Test
+run-name: Run Bun tests
+
+jobs:
+  bun-tests:
+    name: Run Bun Tests
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install Bun
+        uses: oven-sh/setup-bun@v2
+
+      - name: Install dependencies
+        run: bun install
+
+      - name: Run tests
+        run: bun test --coverage

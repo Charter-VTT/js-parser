@@ -1,0 +1,8 @@
+{
+	// Default settings for linters and formatters
+	"editor.defaultFormatter": "biomejs.biome",
+	"biome.enabled": true,
+	"editor.codeActionsOnSave": {
+		"source.organizeImports.biome": "always"
+	}
+}
