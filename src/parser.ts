@@ -1,3 +1,4 @@
+import type InitParser from './parser/ini.ts';
 import type JsonParser from './parser/json.ts';
 import type Json5Parser from './parser/json5.ts';
 import type JsoncParser from './parser/jsonc.ts';
@@ -13,7 +14,8 @@ export type ParserType =
   | typeof TomlParser.type
   | typeof YamlParser.type
   | typeof Json5Parser.type
-  | typeof JsoncParser.type;
+  | typeof JsoncParser.type
+  | typeof InitParser.type;
 
 const lookUp: {
   [type in ParserType]: () => Promise<{ default: DataParser<type> }>;
@@ -23,6 +25,7 @@ const lookUp: {
   yaml: () => import('./parser/yaml.ts'),
   json5: () => import('./parser/json5.ts'),
   jsonc: () => import('./parser/jsonc.ts'),
+  ini: () => import('./parser/ini.ts'),
 };
 
 /**
