@@ -13,6 +13,7 @@ jobs:
       contents: write           # Publish GitHub releases
       issues: write             # Comment on released issues
       pull-requests: write      # Comment on released pull requests
+      packages: write           # Publish packages to GitHub npm registry
 
     steps:
       - name: Checkout repository
