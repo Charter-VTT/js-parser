@@ -3,6 +3,9 @@ name: Publish API Docs (JSON)
 on:
   release:
     types: [published]
+  push:
+    tags:
+      - 'v*'
 
 jobs:
   publish-docs:
