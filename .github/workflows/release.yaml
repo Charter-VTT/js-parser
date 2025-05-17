@@ -39,8 +39,10 @@ jobs:
       issues: write             # Comment on released issues
       pull-requests: write      # Comment on released pull requests
       packages: write           # Publish packages to GitHub npm registry
-
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
       - name: Cache Bun dependencies
         uses: actions/cache@v3
         with:
@@ -66,19 +68,29 @@ jobs:
 
   publish-docs:
     name: Publish API Documentation
-    runs-on: ubuntu-latest
     needs: [release]
+    runs-on: ubuntu-latest
     if: success()
-
     steps:
-      - name: Wait for approval
-        uses: actions/manual-approval@v1
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-      - name: Restore Bun dependencies
+      - name: Cache Bun dependencies
         uses: actions/cache@v3
         with:
           path: ~/.bun
           key: ${{ runner.os }}-bun-${{ hashFiles('**/bun.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-bun-
+
+      - name: Install Bun
+        uses: oven-sh/setup-bun@v2
+
+      - name: Install dependencies
+        run: bun install
+
+      - name: Wait for approval
+        uses: actions/manual-approval@v1
 
       - name: Generate API docs (JSON)
         run: bunx typedoc --json docs/api.json src/parser.ts
