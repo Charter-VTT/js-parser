@@ -46,8 +46,5 @@
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "files": ["dist"],
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Charter-VTT/parser.git"
-  }
+  "repository": "https://github.com/Charter-VTT/parser"
 }

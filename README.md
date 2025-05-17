@@ -42,7 +42,7 @@ bun install
 Import and use the parser in your project:
 
 ```typescript
-import Parser from "@charter/parser";
+import Parser from "@charter-vtt/parser";
 
 const yamlContent = `
 name: Charter VTT
