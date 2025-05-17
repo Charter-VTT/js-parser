@@ -4,30 +4,31 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/Charter-VTT/js-package/blob/main/LICENSE">
-    <img src="https://img.shields.io/github/license/Charter-VTT/js-package" alt="License">
+  <a href="https://github.com/Charter-VTT/js-parser/blob/main/LICENSE">
+    <img src="https://img.shields.io/github/license/Charter-VTT/js-parser" alt="License">
   </a>
   <img src="https://img.shields.io/badge/code%20style-biome-44cc11" alt="Code Style: Biome">
 </p>
 
-# Charter VTT JS Package Template
+# Charter VTT JS Parser
 
-A template repository for Charter VTT JavaScript/TypeScript packages.
+A JavaScript/TypeScript library for parsing various configuration file formats such as JSON, JSON5, JSONC, YAML, and TOML.
 
 ## Features
 
-- TypeScript support
+- Parse multiple configuration file formats (JSON, JSON5, JSONC, YAML, TOML)
+- TypeScript support for type safety
 - Bun for fast installs and testing
 - Ready for API documentation generation (TypeDoc)
-- Example test setup
+- Example test setup included
 
 ## Getting Started
 
 Clone the repository:
 
 ```bash
-git clone https://github.com/Charter-VTT/js-package.git
-cd js-package
+git clone https://github.com/Charter-VTT/js-parser.git
+cd js-parser
 ```
 
 Install dependencies:
@@ -38,13 +39,19 @@ bun install
 
 ## Usage
 
-Import and use the package in your project:
+Import and use the parser in your project:
 
 ```typescript
-import { helloWorld } from "js-package";
+import Parser from "@charter/parser";
 
-console.log(helloWorld("Jane"));
-// Output: Hello, Jane via Bun!
+const yamlContent = `
+name: Charter VTT
+version: 1.0.0
+`;
+
+const parsed = await Parser.parse('yaml', yamlContent);
+console.log(parsed);
+// Output: { name: 'Charter VTT', version: '1.0.0' }
 ```
 
 ## Scripts

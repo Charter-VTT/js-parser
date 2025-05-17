@@ -1,5 +1,5 @@
 {
-  "name": "@charter/template",
+  "name": "@charter/parser",
   "type": "module",
   "license": "MIT",
   "version": "0.0.0",
@@ -15,10 +15,18 @@
     "@rslib/core": "^0.7.0",
     "@types/bun": "latest",
     "lefthook": "^1.11.13",
-    "typedoc": "^0.28.4"
+    "typedoc": "^0.28.4",
+    "lib0": "^0.2.108"
   },
   "peerDependencies": {
-    "typescript": "^5"
+    "typescript": "^5",
+    "lib0": "^0.2.108"
+  },
+  "dependencies": {
+    "@std/jsonc": "npm:@jsr/std__jsonc",
+    "@std/toml": "npm:@jsr/std__toml",
+    "@std/yaml": "npm:@jsr/std__yaml",
+    "json5": "^2.2.3"
   },
   "scripts": {
     "prepare": "lefthook install",
@@ -39,6 +47,6 @@
   "files": ["dist"],
   "repository": {
     "type": "git",
-    "url": "https://github.com/Charter-VTT/js-package.git"
+    "url": "https://github.com/Charter-VTT/js-parser.git"
   }
 }
